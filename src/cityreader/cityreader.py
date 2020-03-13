@@ -10,7 +10,7 @@ class City:
         self.lon = float(lon)
 
     def __repr__(self):
-        return f'({self.name}, {self.lat}, {self.lon})'
+        return f"({self.name}, {self.lat}, {self.lon})"
 
 
 # We have a collection of US cities with population over 750,000 stored in the
@@ -29,12 +29,12 @@ cities = []
 
 
 def cityreader(cities=[]):
-  # TODO Implement the functionality to read from the 'cities.csv' file
-  # For each city record, create a new City instance and add it to the
-  # `cities` list
+    # TODO Implement the functionality to read from the 'cities.csv' file
+    # For each city record, create a new City instance and add it to the
+    # `cities` list
 
-    with open('cities.csv') as cities_csv:
-        city_reader = csv.reader(cities_csv, delimiter=',')
+    with open("cities.csv") as cities_csv:
+        city_reader = csv.reader(cities_csv, delimiter=",")
         count = 0
 
         for line in city_reader:
@@ -82,8 +82,8 @@ for c in cities:
 
 # TODO Get latitude and longitude values from the user
 
-first_city = input('Enter lat1,lon1:  ').split(',')
-second_city = input('Enter lat2,lon2:  ').split(',')
+first_city = input("Enter lat1,lon1:  ").split(",")
+second_city = input("Enter lat2,lon2:  ").split(",")
 
 lat1 = float(first_city[0])
 lon1 = float(first_city[1])
@@ -93,7 +93,7 @@ lon2 = float(second_city[1])
 
 
 def cityreader_stretch(lat1, lon1, lat2, lon2, cities=[]):
-  # within will hold the cities that fall within the specified region
+    # within will hold the cities that fall within the specified region
     lats = sorted([lat1, lat2])
     lons = sorted([lon1, lon2])
 
@@ -101,8 +101,14 @@ def cityreader_stretch(lat1, lon1, lat2, lon2, cities=[]):
     # Go through each city and check to see if it falls within
     # the specified coordinates.
 
-    within = [city for city in cities if city.lat >= lats[0] and city.lat <=
-              lats[1] and city.lon >= lons[0] and city.lon <= lons[1]]
+    within = [
+        city
+        for city in cities
+        if city.lat >= lats[0]
+        and city.lat <= lats[1]
+        and city.lon >= lons[0]
+        and city.lon <= lons[1]
+    ]
     return within
 
 
