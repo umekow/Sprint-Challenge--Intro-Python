@@ -102,12 +102,8 @@ def cityreader_stretch(lat1, lon1, lat2, lon2, cities=[]):
     # the specified coordinates.
 
     within = [
-        city
-        for city in cities
-        if city.lat >= lats[0]
-        and city.lat <= lats[1]
-        and city.lon >= lons[0]
-        and city.lon <= lons[1]
+        city for city in cities if city.lat >= lats[0] and city.lat <= lats[1]
+        and city.lon >= lons[0] and city.lon <= lons[1]
     ]
     return within
 
